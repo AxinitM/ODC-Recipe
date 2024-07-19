@@ -7,7 +7,6 @@ This project was done as part of the [Front End Developer Course by Orange Digit
 - [Links](#links).
 - [The task](#the-task).
 - [Built with](#built-with)
-- [What I learned](#what-i-learned)
 - [Author](#author)
 
 ### Screenshot
@@ -16,7 +15,7 @@ This project was done as part of the [Front End Developer Course by Orange Digit
 
 ### Links
 
-[Solution URL](https://axinitm.github.io/ODC-Recipe/)
+[Page URL](https://axinitm.github.io/ODC-Recipe/)
 
 ### The task
 
@@ -45,10 +44,6 @@ This project was done as part of the [Front End Developer Course by Orange Digit
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-
-### What I learned
-
-This task improved my knowledge in HTML (semantic code, using forms tags, img etc.) and CSS (Flexbox, nesting, margins, paddings etc.).
 
 ### Author
 
