@@ -1,15 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-
-/* 
-==== TODO ====
-- change @import to @font-face
-- make @media for mobile
-? change circles of the UL to the clock symbols
-*/
-
 :root {
   /* Primary colors */
+
   --Nutmeg: hsl(14, 45%, 36%);
   --DarkRaspberry: hsl(332, 51%, 32%);
 
@@ -22,13 +13,22 @@
   --DarkCharcoal: hsl(24, 5%, 18%);
   --ButtonHoverColor: hsl(152, 51%, 32%);
   --LinkColor: hsl(228, 45%, 44%);
+  --AlertCounterRedColor: #f00;
+  --AttentionCounterColor: #b22222;
+  --NormalCounterColor: #228b22;
+  --ButtonHoverColor: #047209;
+
+  /* fonts */
+
+  --mainFamilyFont: "Outfit", sans-serif;
+  --h1HeadersFont: "Young Serif", serif;
 }
 
-/* General section */
+/* General sets */
 
 body {
   background-color: var(--Eggshell);
-  font-family: "Outfit", sans-serif;
+  font-family: var(--mainFamilyFont);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +39,7 @@ body {
 
 h1,
 h2 {
-  font-family: "Young Serif", serif;
+  font-family: var(--h1HeadersFont);
   /* not sure about letter-spacing */
   letter-spacing: 0.7px;
 }
@@ -48,6 +48,7 @@ h1 {
   font-size: 2.5rem;
   margin-top: 0px;
 }
+
 h2 {
   color: var(--Nutmeg);
 }
@@ -63,13 +64,18 @@ p {
   line-height: 1.5;
 }
 
+a {
+  text-decoration: none;
+  font-family: var(--mainFamilyFont);
+}
+
 #container {
   width: 650px;
-  height: auto;
   background-color: var(--white);
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 10px var(--LightGrey);
+  margin: -20px 0;
 }
 
 img {
@@ -79,6 +85,9 @@ img {
   border-radius: 10px;
 }
 
+.asterisk {
+  color: var(--AttentionCounterColor);
+}
 /* Preparing time section */
 
 #preparing-time {
@@ -89,19 +98,6 @@ img {
   padding: 15px;
   border: 1px solid var(--LightGrey);
 }
-
-/* Using clock symbols instead of the classical circles of the ul-markers. 
-Have problems with left-padding/margins
-
-#preparing-time > ul {
-    list-style-type: none;
-    padding-left:0;
-  }
-
-  #preparing-time >  ul li::before {
-    content: "\231A";
-    margin-right: 0.5rem;
-  } */
 
 /* Opinion section */
 
@@ -115,7 +111,7 @@ Have problems with left-padding/margins
   border: 1px solid var(--LightGrey);
   border-radius: 10px;
   background-color: var(--RoseWhite);
-  font-family: "Outfit", sans-serif;
+  font-family: var(--mainFamilyFont);
   font-size: 1em;
   line-height: 1.2;
 }
@@ -127,7 +123,7 @@ textarea {
   border: 1px solid var(--LightGrey);
   border-radius: 10px;
   background-color: var(--RoseWhite);
-  font-family: "Outfit", sans-serif;
+  font-family: var(--mainFamilyFont);
   font-size: 1em;
   line-height: 1.2;
   resize: none;
@@ -138,20 +134,59 @@ textarea::placeholder,
   font-size: 0.9em;
 }
 
+/* Counter chars section */
+
+#counter-remaining {
+  font-size: 0.8rem;
+  /* color: var(--FontLavenderColor); */
+}
+
+#counter {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--NormalCounterColor);
+}
+
+#counter.darkgreen {
+  color: var(--NormalCounterColor);
+}
+
+#counter.brown {
+  color: var(--AttentionCounterColor);
+}
+
+#counter.red {
+  color: var(--AlertCounterRedColor);
+}
+
+/*  buttons sets  */
+
+.nutrition-print-links-section {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+
 #opinion-button,
-#return-button {
+#nutrition-button,
+#print-button,
+#telegram-share-button {
   background-color: var(--DarkRaspberry);
   color: var(--white);
   padding: 10px 20px;
   font-size: 1em;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
+  font-family: var(--mainFamilyFont);
 }
 
 #opinion-button:hover,
-#return-button:hover {
+#nutrition-button:hover,
+#print-button:hover,
+#telegram-share-button:hover {
   cursor: pointer;
   background-color: var(--ButtonHoverColor);
+  font-family: var(--mainFamilyFont);
 }
 
 /* hr-lines between sections */
@@ -221,21 +256,10 @@ th {
   padding-left: 20px;
 }
 
-/* Return-botton section
-return-button settings see above - #return-button */
-
-#return-button {
-  margin: 15px 0 0 15px;
-}
-
 /* Links */
 
-a {
+a.attribution {
   color: var(--LinkColor);
-}
-
-a:hover {
-  text-decoration: none;
 }
 
 /* Footer section */
@@ -243,6 +267,188 @@ a:hover {
 .attribution {
   margin-top: 30px;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   margin-bottom: -35px;
+}
+
+/* print sets */
+@media print {
+  @page {
+    margin: -30px 0;
+    padding: 0;
+  }
+
+  * {
+    line-height: 1.4;
+  }
+
+  body {
+    font-size: 1.2rem;
+  }
+
+  #container {
+    box-shadow: none;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2,
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  #preparing-time {
+    /* border-radius: 10px; */
+    padding: 0 15px 0;
+    border: 1px solid var(--LightGrey);
+    margin: 0;
+  }
+
+  .intro-text,
+  .full-recipe-section-print,
+  .nutrition-section-print,
+  .ask-opinion-section-print,
+  .nutrition-print-links-section,
+  footer,
+  button {
+    display: none;
+  }
+}
+
+/* media for small screens */
+
+@media (max-width: 470px) {
+  body {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #container {
+    width: 95%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p,
+  li {
+    font-size: 0.9rem;
+  }
+
+  #preparing-time,
+  #opinion-section,
+  #full-recipe-link,
+  .attribution {
+    width: 100%;
+  }
+
+  #opinion-button,
+  #nutrition-button,
+  #print-button,
+  #telegram-share-button {
+    font-size: 0.7rem;
+    padding: 8px;
+    margin-bottom: 10px;
+    gap: 5px;
+  }
+
+  /* changing nutrition text button to apple icon */
+  #nutrition-button::before {
+    content: "\1F34E";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+
+  /* changing print text button to printer icon */
+  #print-button::before {
+    content: "\f02f";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+
+  /* changing telegram button to Telegram icon */
+  #telegram-share-button::before {
+    content: "\f2c6";
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 900;
+  }
+
+  /* hidden text button */
+  #nutrition-button,
+  #print-button,
+  #telegram-share-button {
+    font-size: 0;
+    padding: 12px;
+  }
+
+  /* size icons */
+  #nutrition-button::before,
+  #print-button::before,
+  #telegram-share-button::before {
+    font-size: 1.2rem;
+  }
+
+  .attribution > p {
+    font-size: 0.7rem;
+  }
+  .attribution {
+    padding-bottom: 10px;
+  }
+
+  #preparing-time {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  #opinion-section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  #name,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  td,
+  th {
+    padding: 8px;
+    padding-left: 15px;
+  }
 }
