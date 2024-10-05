@@ -5,11 +5,11 @@ This project was done as part of the [Front End Developer Course by Orange Digit
 ## Table of contents
 - [Screenshot](#screenshot).
 - [Links](#links).
-- [The task](#the-task).
+- [Description](#Description).
 - [Built with](#built-with)
 - [Author](#author)
 
-## Screenshot
+# Screenshot
 
 ![](/images/screenshot.png)
 
