@@ -44,6 +44,7 @@ This project was done as part of the [Front End Developer Course by Orange Digit
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Vanilla Java Script
 
 ### Author
 
