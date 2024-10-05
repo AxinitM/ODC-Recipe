@@ -9,25 +9,23 @@ This project was done as part of the [Front End Developer Course by Orange Digit
 - [Built with](#built-with)
 - [Author](#author)
 
-### Screenshot
+## Screenshot
 
 ![](/images/screenshot.png)
 
-### Links
+## Links
 
 [Page URL](https://axinitm.github.io/ODC-Recipe/)
 
-### Description
+Description
 
-This page contains a recipe for apple pie, including its photo, expected preparation time, a list of ingredients, instructions on how to make the pie, a description of its nutritional value, a feedback form, a button to print the recipe, and a button to share it via Telegram
-
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - Vanilla Java Script
 
-### Author
+## Author
 
 - GitHub - [Andrei Martinenko](https://github.com/AxinitM)
