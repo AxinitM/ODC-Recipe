@@ -3,8 +3,8 @@
 This project was done as part of the [Front End Developer Course by Orange Digital Centre](https://digitalcenter.orange.md/).
 
 ## Table of contents
-- [Screenshot](#screenshot).
-- [Links](#links).
+- [Screenshot](#screenshot)
+- [Links](#links)
 - [Description](#Description)
 - [Built with](#built-with)
 - [Author](#author)
@@ -28,5 +28,5 @@ This page contains a recipe for apple pie, featuring a photo of the pie, the est
 - Vanilla Java Script
 
 ## Author
-
+- My page - [Andrei Martinenko](https://www.frontender.biz/)
 - GitHub - [Andrei Martinenko](https://github.com/AxinitM)
