@@ -1,4 +1,4 @@
-# Front End Developer Course - Recipe Page
+# Recipe Page
 
 This project was done as part of the [Front End Developer Course by Orange Digital Centre](https://digitalcenter.orange.md/).
 
@@ -25,7 +25,7 @@ This page contains a recipe for apple pie, featuring a photo of the pie, the est
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- Vanilla Java Script
+- Vanilla JS
 
 ## Author
 - My page - [Andrei Martinenko](https://www.frontender.biz/)
